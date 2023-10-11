@@ -3,7 +3,7 @@ from app_todo.models import *
 
 
 def home(request):
-    task = Task.objects.filter(is_completed=False)
+    task = Task.objects.filter(is_completed=False).order_by('-updated_at')
     context = {
         "tasks": task, 
         }
